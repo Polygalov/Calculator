@@ -4,10 +4,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:background="@color/calc_background"
+                android:background="@drawable/background"
                 tools:context=".MainActivity" >
-
-
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -21,28 +19,22 @@
         <EditText
             android:id="@+id/txtResult"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
             android:layout_column="0"
             android:layout_columnSpan="4"
             android:layout_gravity="top|left"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:layout_row="0"
-            android:background="@drawable/calc_edit_text"
+            android:background="@drawable/round_button_pressed"
             android:enabled="true"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:gravity="right"
             android:inputType="numberDecimal"
-            android:padding="5dp"
             android:text="0"
-            android:textAlignment="viewEnd"
+            android:textAlignment="center"
             android:textSize="35sp"
             android:textStyle="bold"
-            android:typeface="serif" >
-
-            <requestFocus />
-        </EditText>
+            android:typeface="serif" />
 
         <Button
             android:id="@+id/btnOne"
@@ -52,7 +44,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="1"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="1"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -60,7 +52,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="1"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -71,7 +62,7 @@
             android:layout_gravity="top|left"
             android:layout_margin="2dp"
             android:layout_row="1"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="2"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -79,7 +70,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="2"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -90,7 +80,7 @@
             android:layout_gravity="top|left"
             android:layout_margin="2dp"
             android:layout_row="1"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="3"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -98,7 +88,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="3"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -109,7 +98,7 @@
             android:layout_gravity="top|left"
             android:layout_margin="2dp"
             android:layout_row="2"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="6"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -117,7 +106,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="6"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -128,7 +116,7 @@
             android:layout_gravity="top|left"
             android:layout_margin="2dp"
             android:layout_row="2"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="5"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -136,7 +124,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="5"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -148,7 +135,7 @@
             android:layout_gravity="top|left"
             android:layout_margin="2dp"
             android:layout_row="5"
-            android:background="@drawable/red_button"
+            android:background="@drawable/round_button"
             android:contentDescription="C"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -156,7 +143,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="C"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/red"
             android:textSize="20sp" />
 
         <Button
@@ -168,7 +155,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="5"
-            android:background="@drawable/blue_button"
+            android:background="@drawable/round_button"
             android:contentDescription="="
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -176,7 +163,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="="
-            android:textColor="#FFFFFF"
+            android:textColor="@color/green"
             android:textSize="20sp" />
 
         <Button
@@ -187,7 +174,7 @@
             android:layout_gravity="top|left"
             android:layout_margin="2dp"
             android:layout_row="2"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="8"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -195,7 +182,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="8"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -206,7 +192,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="1"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="4"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -214,7 +200,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="4"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -225,7 +210,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="2"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="7"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -233,7 +218,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="7"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -244,7 +228,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="3"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="9"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -252,7 +236,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="9"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -263,7 +246,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="3"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="0"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -271,7 +254,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="0"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -282,7 +264,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="3"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription=","
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -290,7 +272,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text=","
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -301,7 +282,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="3"
-            android:background="@drawable/black_button"
+            android:background="@drawable/round_button"
             android:contentDescription="Del"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -309,7 +290,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="&lt;-"
-            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <Button
@@ -320,7 +300,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="4"
-            android:background="@drawable/white_button"
+            android:background="@drawable/round_button"
             android:contentDescription="/"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -328,7 +308,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="/"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/blue"
             android:textSize="20sp" />
 
         <Button
@@ -339,7 +319,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="4"
-            android:background="@drawable/white_button"
+            android:background="@drawable/round_button"
             android:contentDescription="*"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -347,7 +327,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="*"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/blue"
             android:textSize="20sp" />
 
         <Button
@@ -358,7 +338,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="4"
-            android:background="@drawable/white_button"
+            android:background="@drawable/round_button"
             android:contentDescription="+"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -366,7 +346,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="+"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/blue"
             android:textSize="20sp" />
 
         <Button
@@ -377,7 +357,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="2dp"
             android:layout_row="4"
-            android:background="@drawable/white_button"
+            android:background="@drawable/round_button"
             android:contentDescription="-"
             android:onClick="buttonClick"
             android:shadowColor="#A8A8A8"
@@ -385,7 +365,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:text="-"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/blue"
             android:textSize="20sp" />
 
     </GridLayout>
