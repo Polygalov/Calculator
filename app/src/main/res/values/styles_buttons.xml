@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="rounded_button">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:onClick">buttonClick</item>
+    </style>
+
+    <style name="rounded_button.red">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:onClick">buttonClick</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="rounded_button.green">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:onClick">buttonClick</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="rounded_button.red.big">
+        <item name="android:layout_height">65dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:onClick">buttonClick</item>
+        <item name="android:layout_width">130dp</item>
+    </style>
+
+    <style name="rounded_button.green.big">
+        <item name="android:layout_height">65dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:onClick">buttonClick</item>
+        <item name="android:layout_width">130dp</item>
+    </style>
+
+</resources>
