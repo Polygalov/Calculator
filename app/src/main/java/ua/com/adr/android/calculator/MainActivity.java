@@ -3,15 +3,20 @@ package ua.com.adr.android.calculator;
 import java.util.EnumMap;
 
 //import ua.com.adr.android.R;
-import ua.com.adr.android.calc.CalcOperations;
+import ua.com.adr.android.calculator.calc.CalcOperations;
 import ua.com.adr.android.enums.ActionType;
 import ua.com.adr.android.enums.OperationType;
 import ua.com.adr.android.enums.Symbol;
 import ua.com.adr.android.exceptions.DivisionByZeroException;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +31,9 @@ public class MainActivity extends Activity {
     private Button btnMultiply;
     private Button btnSubtract;
 
+    private static int currentTheme = R.style.CalcTheme;
+    private static double currentResult;
+
     private OperationType operType;
 
     private EnumMap<Symbol, Object> commands = new EnumMap<Symbol, Object>(
@@ -33,12 +41,42 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+        setTheme(currentTheme);
+
         setContentView(R.layout.activity_main);
 
-//		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         txtResult = (EditText) findViewById(R.id.txtResult);
+
+        txtResult.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().length() > 0) {
+                    currentResult = Double.valueOf(s.toString().replace(',', '.'));
+                } else {
+                    currentResult = 0;
+                }
+
+            }
+        });
+
+        showResult(currentResult);
 
         btnAdd = (Button) findViewById(R.id.btnAdd);
         btnDivide = (Button) findViewById(R.id.btnDivide);
@@ -58,6 +96,33 @@ public class MainActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.submenuClassicTheme:
+                currentTheme = R.style.AppTheme;
+                break;
+
+            case R.id.submenuNewTheme:
+                currentTheme = R.style.CalcTheme;
+                break;
+
+            case R.id.menuAbout:
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+        finish();
+        startActivity(new Intent(this, getClass()));
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void showToastMessage(int messageId) {
@@ -112,7 +177,8 @@ public class MainActivity extends Activity {
 
             case R.id.btnResult: {// кнопка посчитать результат
 
-                if (lastAction == ActionType.CALCULATION) return;
+                if (lastAction == ActionType.CALCULATION)
+                    return;
 
                 if (commands.containsKey(Symbol.FIRST_DIGIT)
                         && commands.containsKey(Symbol.OPERATION)) {// если ввели
@@ -226,18 +292,22 @@ public class MainActivity extends Activity {
             return;
         }
 
-        if (result % 1 == 0) {
-            txtResult.setText(String.valueOf((int) result));// отсекать нули
-            // после запятой
-        } else {
-            txtResult.setText(String.valueOf(result));// отсекать нули после
-            // запятой
-        }
+        showResult(result);
 
         commands.put(Symbol.FIRST_DIGIT, result);// записать полученный
         // результат в первое число,
         // чтобы можно было сразу
         // выполнять новые операции
+
+    }
+
+    private void showResult(double result) {
+        if (result % 1 == 0) {
+            txtResult.setText(String.valueOf((int) result));// отсекать нули
+            // после запятой
+        } else {
+            txtResult.setText(String.valueOf(result));
+        }
 
     }
 

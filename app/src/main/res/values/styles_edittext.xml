@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="rounded_edittext">
+    
+    <style name="classic_edittext" parent="@android:style/Widget.EditText">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_gravity">top|left</item>
-        <item name="android:background">@drawable/round_button_pressed</item>
         <item name="android:enabled">true</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:typeface">serif</item>
@@ -14,6 +14,10 @@
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:gravity">right</item>
+    </style>
+    
+    <style name="classic_edittext.rounded">
+        <item name="android:background">@drawable/round_button_pressed</item>
     </style>
 
   
